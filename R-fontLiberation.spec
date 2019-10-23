@@ -4,13 +4,14 @@
 #
 Name     : R-fontLiberation
 Version  : 0.1.0
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/fontLiberation_0.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fontLiberation_0.1.0.tar.gz
 Summary  : Liberation Fonts
 Group    : Development/Tools
 License  : OFL-1.1
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 1. What's this?
@@ -25,13 +26,13 @@ layout compatibility as usage of Times New Roman, Arial, Courier New.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1560784053
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571831675
 
 %install
-export SOURCE_DATE_EPOCH=1560784053
+export SOURCE_DATE_EPOCH=1571831675
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -60,7 +61,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
