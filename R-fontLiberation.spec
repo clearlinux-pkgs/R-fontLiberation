@@ -4,38 +4,37 @@
 #
 Name     : R-fontLiberation
 Version  : 0.1.0
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/fontLiberation_0.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fontLiberation_0.1.0.tar.gz
 Summary  : Liberation Fonts
 Group    : Development/Tools
 License  : OFL-1.1
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-1. What's this?
-=================
-The Liberation Fonts is font collection which aims to provide document
-layout compatibility as usage of Times New Roman, Arial, Courier New.
+`fontquiver` package. This fontset covers the 12 combinations of
+    families (sans, serif, mono) and faces (plain, bold, italic, bold
+    italic) supported in R graphics devices.
 
 %prep
 %setup -q -c -n fontLiberation
+cd %{_builddir}/fontLiberation
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571831675
+export SOURCE_DATE_EPOCH=1589533765
 
 %install
-export SOURCE_DATE_EPOCH=1571831675
+export SOURCE_DATE_EPOCH=1589533765
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
