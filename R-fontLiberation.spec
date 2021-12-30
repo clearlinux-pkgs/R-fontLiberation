@@ -4,7 +4,7 @@
 #
 Name     : R-fontLiberation
 Version  : 0.1.0
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/fontLiberation_0.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fontLiberation_0.1.0.tar.gz
 Summary  : Liberation Fonts
